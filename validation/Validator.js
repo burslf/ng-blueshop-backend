@@ -43,18 +43,6 @@ exports.validateSignUp = (user) => {
             errorOccurred = true;
         }
     }
-    if(!user.userName || validator.isEmpty(user.userName)){
-        errorObject.userName = "Required field";
-        errorObject.error = true;
-        errorOccurred = true;
-    }else{
-        //Check if Maximum length exceeded
-        if(user.userName.length>32){
-            errorObject.userName = "Maximum length exceeded";
-            errorObject.error = true;
-            errorOccurred = true;
-        }
-    }
     if(!user.password){
         errorObject.password = "Required field";
         errorObject.error = true;
@@ -118,5 +106,4 @@ exports.escapeCharsForSignUpForm = (user) => {
     user.email = validator.escape(user.email);
     user.firstName = validator.escape(user.firstName);
     user.lastName = validator.escape(user.lastName);
-    user.userName = validator.escape(user.userName);
 }

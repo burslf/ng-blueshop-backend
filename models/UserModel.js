@@ -34,7 +34,6 @@ const createUserObjectToInsert = (user) => {
         firstName: user.firstName,
         lastName: user.lastName,
         role: 'user',
-        userName: user.userName,
         purchasedItems: [],
         favoriteItems: [],
     }
